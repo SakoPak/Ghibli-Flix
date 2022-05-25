@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 import { signUp, signIn } from '../../api/auth'
 import { signUpSuccess, signUpFailure } from '../AutoDismissAlert/messages'
@@ -50,48 +50,100 @@ onSignUp = (event) => {
 }
 
 render () {
-  const { email, password, passwordConfirmation } = this.state
+  const { username, email, password, passwordConfirmation } = this.state
 
   return (
-    <div className='row'>
-      <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-        <h3>Sign Up</h3>
-        <Form onSubmit={this.onSignUp}>
-          <Form.Group controlId='email'>
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              required
-              type='email'
-              name='email'
-              value={email}
-              placeholder='Enter email'
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId='password'>
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              required
-              name='password'
-              value={password}
-              type='password'
-              placeholder='Password'
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId='passwordConfirmation'>
-            <Form.Label>Password Confirmation</Form.Label>
-            <Form.Control
-              required
-              name='passwordConfirmation'
-              value={passwordConfirmation}
-              type='password'
-              placeholder='Confirm Password'
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Button variant='primary' type='submit'>Submit</Button>
-        </Form>
+    <div
+      className='modal modal-signin position-static d-block py-5'
+      tabIndex='-1'
+      role='dialog'
+      id='modalSignin'>
+      <div className='modal-dialog' role='document'>
+        <div className='modal-content rounded-5 shadow'>
+          <div className='modal-header p-5 pb-4 border-bottom-0'>
+            <h2 className='modal-title'>Sign Up</h2>
+            <button
+              type='button'
+              className='btn-close'
+              data-bs-dismiss='modal'
+              aria-label='Close'></button>
+          </div>
+
+          <div className='modal-body p-5 pt-0'>
+            <div className='form-floating mb-3'>
+              <Form.Group controlId='username'>
+                <Form.Label for='floatingInput'></Form.Label>
+                <Form.Control
+                  required
+                  type='username'
+                  name='username'
+                  value={username}
+                  placeholder='Enter username'
+                  onChange={this.handleChange}
+                  id='floatingInput'
+                  class='form-control rounded-4'
+                />
+              </Form.Group>
+            </div>
+
+            <Form onSubmit={this.onSignUp}>
+              <div className='form-floating mb-3'>
+                <Form.Group controlId='email'>
+                  <Form.Label for='floatingInput'></Form.Label>
+                  <Form.Control
+                    required
+                    type='email'
+                    name='email'
+                    value={email}
+                    placeholder='Enter email'
+                    onChange={this.handleChange}
+                    id='floatingInput'
+                    class='form-control rounded-4'
+                  />
+                </Form.Group>
+              </div>
+
+              <div className='form-floating mb-3'>
+                <Form.Group controlId='password'>
+                  <Form.Label for='floatingPassword'></Form.Label>
+                  <Form.Control
+                    required
+                    name='password'
+                    value={password}
+                    type='password'
+                    placeholder='Password'
+                    onChange={this.handleChange}
+                    id='floatingPassword'
+                    class='form-control rounded-4'
+                  />
+                </Form.Group>
+              </div>
+
+              <div className='form-floating mb-3'>
+                <Form.Group controlId='passwordConfirmation'>
+                  <Form.Label for='floatingPassword'>
+                  </Form.Label>
+                  <Form.Control
+                    required
+                    name='passwordConfirmation'
+                    value={passwordConfirmation}
+                    type='password'
+                    placeholder='Confirm Password'
+                    onChange={this.handleChange}
+                    id='floatingPassword'
+                    class='form-control rounded-4'
+                  />
+                </Form.Group>
+              </div>
+              <Link to={'/Main'} className='nav-link'>
+                <Button
+                  class='w-100 mb-2 btn btn-lg rounded-4 btn-primary'
+                  type='submit'>Submit
+                </Button>
+              </Link>
+            </Form>
+          </div>
+        </div>
       </div>
     </div>
   )

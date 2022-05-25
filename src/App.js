@@ -10,6 +10,10 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import LandingPage from './components/Landing/LandingPage'
+import FilmIndex from './components/FilmIndex/FilmIndex'
+import FilmDetails from './components/Films/FilmDetails'
+import Main from './components/Home/Main'
 
 class App extends Component {
   constructor (props) {
@@ -41,11 +45,10 @@ class App extends Component {
 
   render () {
     const { msgAlerts, user } = this.state
-
     return (
       <Fragment>
-	      <Header user={user} />
-	      {msgAlerts.map((msgAlert) => (
+        <Header user={user} />
+        {msgAlerts.map((msgAlert) => (
           <AutoDismissAlert
             key={msgAlert.id}
             heading={msgAlert.heading}
@@ -55,8 +58,24 @@ class App extends Component {
             deleteAlert={this.deleteAlert}
           />
         ))}
-	      <main className='container'>
-	        <Route
+        <main className='container'>
+          <Route exact path='/' render={() => <LandingPage />} />
+          <Route path='/Main' render={() => <Main />} />
+          <Route
+            path='/FilmDetails/:id'
+            render={() => (
+              <FilmDetails msgAlert={this.msgAlert} user={this.state.user} />
+            )}
+          />
+          <Route
+            exact
+            path='/films'
+            render={() => (
+              <FilmIndex msgAlert={this.msgAlert} user={this.state.user} />
+            )}
+          />
+
+          <Route
             path='/sign-up'
             render={() => (
               <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />

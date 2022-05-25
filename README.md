@@ -4,7 +4,7 @@
 
 Ghibli Flix is a place to find all your favorite Ghibli movies! You can look up any Ghibli movie, read a summary and create a favorite watchlist for future viewing.
 
-## Using Study Notes
+## Using Ghibli Flix
 
 
 
@@ -19,7 +19,12 @@ Ghibli Flix is a place to find all your favorite Ghibli movies! You can look up 
 - User will pick a Ghibli movie that they want further information on and view all Ghibli movies.
 - User can pick movies to place on their watchlist.
 - User will be able to edit, delete and update their watchlist.
-  
+
+## Wireframes
+
+
+
+
 ### Routes
 
 | Endpoint         | Component | `AuthenticatedRoute`? |
@@ -38,7 +43,7 @@ Ghibli Flix is a place to find all your favorite Ghibli movies! You can look up 
 |   [Axios](https://www.npmjs.com/package/axios)        | [Javascript](https://www.javascript.com/)          | [BootStrap](https://getbootstrap.com/)       |           |
 |   [Mongoose](https://mongoosejs.com/)         | [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)          |        |          |
 |         |           |        |         |
-|          |          |       |         |
+
 
 
 ## About Me
