@@ -5,7 +5,7 @@
 Ghibli Flix is a place to find all your favorite Ghibli movies! You can look up any Ghibli movie, read a summary and create a favorite watchlist for future viewing.
 
 ## Logging in Online
- To log in and get started, click <a href="" target="_blank">here!</a>
+ To log in and get started, click <a href="https://afternoon-earth-27940.herokuapp.com" target="_blank">here!</a>
 
 ## Installation
 
@@ -70,8 +70,8 @@ To begin, navigate on the project directory, after you have downloaded or cloned
  
 ### [Link to Back End Repo](https://github.com/SakoPak/Ghibli-Flix-Express)
 ### Links to Deployed Sites:
-- [Link to the API Deployed]()
-- [Link to the Client Deployed]()
+- [Link to the API Deployed](https://afternoon-earth-27940.herokuapp.com/)
+- [Link to the Client Deployed](https://sakopak.github.io/Ghibli-Flix/)
 
 ## Stretch Goals
 - User can pick movies to place on their watchlist.
