@@ -1,0 +1,11 @@
+.btn {
+    background: hsla(172, 85%, 74%, 1);
+    
+        background: linear-gradient(90deg, hsla(172, 85%, 74%, 1) 0%, hsla(319, 74%, 64%, 1) 100%);
+    
+        background: -moz-linear-gradient(90deg, hsla(172, 85%, 74%, 1) 0%, hsla(319, 74%, 64%, 1) 100%);
+    
+        background: -webkit-linear-gradient(90deg, hsla(172, 85%, 74%, 1) 0%, hsla(319, 74%, 64%, 1) 100%);
+    
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#83F5E5", endColorstr="#E761BD", GradientType=1);
+}

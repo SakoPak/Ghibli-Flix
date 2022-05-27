@@ -9,7 +9,8 @@ export const createProfile = (data, user) => {
       profile: {
         username: data.username,
         first: data.first,
-        last: data.last
+        last: data.last,
+        color: data.color
       }
     },
     headers: {
@@ -26,7 +27,8 @@ export const updateProfile = (data, id, user) => {
       profile: {
         username: data.username,
         first: data.first,
-        last: data.last
+        last: data.last,
+        color: data.color
       }
     },
     headers: {
@@ -38,6 +40,16 @@ export const updateProfile = (data, id, user) => {
 export const showProfile = (id, user) => {
   return axios({
     url: apiUrl + '/profile/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${user.token}`
+    }
+  })
+}
+
+export const indexProfiles = (user) => {
+  return axios({
+    url: apiUrl + '/profiles',
     method: 'GET',
     headers: {
       Authorization: `Bearer ${user.token}`

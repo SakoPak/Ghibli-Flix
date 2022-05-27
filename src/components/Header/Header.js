@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
-import { Link, NavLink } from 'react-router-dom'
+import { Navbar, Nav } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
+import './header.css'
 
 const authenticatedOptions = (
   <Fragment>
@@ -13,6 +13,9 @@ const authenticatedOptions = (
     </NavLink>
     <NavLink to='/films' className='nav-link'>
     All Films
+    </NavLink>
+    <NavLink to='/profile' className='nav-link'>
+    Home
     </NavLink>
   </Fragment>
 )
@@ -26,26 +29,35 @@ const unauthenticatedOptions = (
 
 const alwaysOptions = (
   <Fragment>
-    <NavLink exact to='/' className='nav-link'></NavLink>
+    <NavLink exact to='/' className='nav-link'>Ghibli Flix</NavLink>
   </Fragment>
 )
 
-const Header = ({ user }) => (
-  <Navbar variant='dark' expand='md'>
-    <Navbar.Brand>
-      <Link to='/' style={{ color: 'black', textDecoration: 'none' }}>Ghibli Flix</Link>
-    </Navbar.Brand>
-    <Navbar.Toggle aria-controls='basic-navbar-nav' />
-    <Navbar.Collapse id='basic-navbar-nav'>
-      <Nav className='ml-auto'>
-        {user && (
-          <span className='navbar-text mr-2'>Welcome, {user.username}</span>
-        )}
-        {alwaysOptions}
-        {user ? authenticatedOptions : unauthenticatedOptions}
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
-)
+const Header = ({ user }) => {
+  return (
+    <>
+      <div className='container'>
+        <Navbar
+          bg='light'
+          variant='dark'
+          expand='md'
+          className='d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none'>
+          <Navbar.Toggle aria-controls='basic-navbar-nav' />
+          <Navbar.Collapse id='basic-navbar-nav'>
+            <Nav className='ml-auto text-dark'>
+              {user && (
+                <span className='navbar-text mr-2'>Welcome, {user.username}
+                </span>
+              )}
+              {alwaysOptions}
+              {user ? authenticatedOptions : unauthenticatedOptions}
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </div>
+
+    </>
+  )
+}
 
 export default Header

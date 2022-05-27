@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 import { signUp, signIn } from '../../api/auth'
 import { signUpSuccess, signUpFailure } from '../AutoDismissAlert/messages'
@@ -12,6 +12,7 @@ class SignUp extends Component {
     super(props)
 
     this.state = {
+      username: '',
       email: '',
       password: '',
       passwordConfirmation: ''
@@ -38,7 +39,7 @@ onSignUp = (event) => {
         variant: 'success'
       })
     )
-    .then(() => history.push('/'))
+    .then(() => history.push('/profile'))
     .catch((error) => {
       this.setState({ email: '', password: '', passwordConfirmation: '' })
       msgAlert({
@@ -63,6 +64,7 @@ render () {
           <div className='modal-header p-5 pb-4 border-bottom-0'>
             <h2 className='modal-title'>Sign Up</h2>
             <button
+              id='closeModal'
               type='button'
               className='btn-close'
               data-bs-dismiss='modal'
@@ -135,12 +137,12 @@ render () {
                   />
                 </Form.Group>
               </div>
-              <Link to={'/Main'} className='nav-link'>
-                <Button
-                  class='w-100 mb-2 btn btn-lg rounded-4 btn-primary'
-                  type='submit'>Submit
-                </Button>
-              </Link>
+
+              <Button
+                class='w-100 mb-2 btn btn-lg rounded-4 btn-primary'
+                type='submit'>Submit
+              </Button>
+
             </Form>
           </div>
         </div>

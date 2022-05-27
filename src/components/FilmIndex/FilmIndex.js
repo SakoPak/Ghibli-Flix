@@ -15,15 +15,13 @@ function FilmIndex (props) {
     indexFilms(user)
       .then((res) => res.data)
       .then((res) => {
-        // console.log('in useEffect in FilmIndex after API call', res.data)
         // passing all films + response as args to 'setFilms' function
-        setFilms(res) // should it be 'res.res'?
+        setFilms(res)
       })
       .catch((error) => console.error('Error: ', error))
   }, [])
 
   // map through films
-  //
   // want to display film cards on grid
 
   return (

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { showFilm } from '../../api/films'
-
+import './filmsDetail.css'
+import { Button } from 'react-bootstrap'
 // this is the 'back' of the film card
 
 function FilmDetails (props) {
@@ -14,56 +15,52 @@ function FilmDetails (props) {
       .catch(console.error)
   }, [])
 
-  // {() => {
-  //   if (currentFilm) {
-  //     return (
-  //        <jsx>
-  //     )
-  //   }
-  // }}
-
   if (currentFilm) {
     return (
-      <div className='DetailPage'>
-        <div className='DetailCard'>
-          <div className='FilmBanner'>
-            <img src={currentFilm.movie_banner} />
-          </div>
-          <div className='InfoContainer'>
-            <div className='MovieInfo'>
-              <p>Film Title:</p>
-              <p>{currentFilm.title}</p>
+      <div className='card mb-3'>
+        <div className='DetailPage'>
+          <div className='DetailCard'>
+            <div className='FilmBanner'>
+              <img className='card-img-top' src={currentFilm.movie_banner} />
             </div>
-            <div className='MovieInfo'>
-              <p>Original Title:</p>
-              <p>{currentFilm.original_title}</p>
-            </div>
-            <div className='MovieInfo'>
-              <p>Romanised Title:</p>
-              <p>{currentFilm.romanised_title}</p>
-            </div>
-            <div className='MovieInfo'>
-              <p>Director:</p>
-              <p>{currentFilm.director}</p>
-            </div>
-            <div className='MovieInfo'>
-              <p>Producer:</p>
-              <p>{currentFilm.producer}</p>
-            </div>
-            <div className='MovieInfo'>
-              <p>Release Year:</p>
-              <p>{currentFilm.release}</p>
-            </div>
-            <div className='MovieInfo'>
-              <p>Rotten Tomatoes:</p>
-              <p>{currentFilm.rt_score}</p>
-            </div>
-            <div className='MovieInfo'>
-              <p>Running Time:</p>
-              <p>{`${currentFilm.running_time} minutes`}</p>
-            </div>
-            <div className='Description'>
-              <p>{`Summary:    ${currentFilm.description}`}</p>
+            <div className='card-body'>
+              <h3 className='card-title'>
+                <p className='display-inline'>
+                  {currentFilm.title} ({currentFilm.release_date})
+                </p>{' '}
+                <Link to={'/films/'}>
+                  <Button className='btn btn-outline btn-sm'>View All Films
+                  </Button>
+                </Link>
+              </h3>
+
+              <div className='card-text'>
+                <p className='display-inline'>Original Title: {currentFilm.original_title}
+                </p>
+              </div>
+              <div className='card-text'>
+                <p className='display-inline'>Romanised Title: {currentFilm.romanised_title}
+                </p>
+              </div>
+              <div className='card-text'>
+                <p className='display-inline'>Director: {currentFilm.director}
+                </p>
+              </div>
+              <div className='card-text'>
+                <p className='display-inline'>Producer: {currentFilm.producer}
+                </p>
+              </div>
+              <div className='card-text'>
+                <p className='display-inline'>Rotten Tomatoes: {currentFilm.rt_score}
+                </p>
+              </div>
+              <div className='card-text'>
+                <p className='display-inline'>Running Time: {`${currentFilm.running_time} minutes`}
+                </p>
+              </div>
+              <div className='card-text'>
+                <p>{`Summary:    ${currentFilm.description}`}</p>
+              </div>
             </div>
           </div>
         </div>

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button'
 import { withRouter } from 'react-router-dom'
 import { showProfile, deleteProfile } from '../../api/profile'
-import './profile.css'
 import Card from 'react-bootstrap/Card'
 
 class ShowProfile extends Component {
@@ -18,7 +17,10 @@ class ShowProfile extends Component {
     const { match, user, msgAlert } = this.props
 
     showProfile(match.params.id, user)
-      .then((res) => this.setState({ profile: res.data.profile }))
+      .then((res) => {
+        console.log(res)
+        this.setState({ profile: res.data.profile })
+      })
       .then(() => {
         msgAlert({
           heading: 'Profile success',
@@ -39,7 +41,7 @@ handleDelete = () => {
   const { match, user, msgAlert, history } = this.props
 
   deleteProfile(match.params.id, user)
-    .then(() => history.push('/create-profile'))
+    .then(() => history.push('/profile'))
     .then(() => {
       msgAlert({
         heading: 'Delete success',
@@ -61,7 +63,7 @@ render () {
     return 'Loading...'
   }
 
-  const { username, first, last, owner } = this.state.profile
+  const { username, first, last, owner } = this.state.data
   const { user, history, match } = this.props
 
   return (

@@ -1,4 +1,4 @@
-import React, { Component, Link } from 'react'
+import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
 import { signIn } from '../../api/auth'
@@ -37,9 +37,9 @@ onSignIn = (event) => {
         variant: 'success'
       })
     )
-    .then(() => history.push('/'))
+    .then(() => history.push('/profile'))
     .catch((error) => {
-      this.setState({ email: '', password: '' })
+      this.setState({ username: '', password: '' })
       msgAlert({
         heading: 'Sign In Failed with error: ' + error.message,
         message: signInFailure,
@@ -66,6 +66,7 @@ render () {
 
           <div className='col-md-10 mx-auto col-lg-5'>
             <div className='p-4 p-md-5 border rounded-3 bg-light'>
+              <h2 className='text-center'>Sign In</h2>
               <Form onSubmit={this.onSignIn}>
                 <div className='form-floating mb-3'>
                   <Form.Group controlId='username'>
@@ -96,15 +97,8 @@ render () {
                   </Form.Group>
                 </div>
 
-                <div className='checkbox mb-3'>
-                  <label>
-                    <input type='checkbox' value='remember-me' /> Remember me
-                  </label>
-                </div>
-                <Link to={'/Main'} className='nav-link'>
-                  <Button variant='primary' type='submit'>Submit
-                  </Button>
-                </Link>
+                <Button variant='primary' type='submit'>Submit
+                </Button>
                 <hr className='my-4'></hr>
                 <p className='mt-5 mb-3 text-muted'>&copy; Happy Ghibli-ing!</p>
               </Form>

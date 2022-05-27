@@ -1,22 +1,16 @@
 
 import { Card, Button, Container, Row } from 'react-bootstrap'
-
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './filmCard.css'
 
 // each film card will have an image, a few details and a 'more details' button
 
 const FilmCard = (props) => {
   console.log(props)
-
   const { key, film } = props
+
   // 'key' is 'id' value
-
-  //   const imageCard = {
-  //     backgroundImage: `${film.image}`,
-  //     backgroundSize: 'cover'
-  //   }
-
   return (
     <>
       <Container fluid>
@@ -26,25 +20,19 @@ const FilmCard = (props) => {
               <h2>{film.title}</h2>
               <a href={`/films/${film.id}`}>
                 <img
-                  style={{ width: '65%', height: '320px' }}
+                  style={{ width: '65%', height: 'auto' }}
                   src={film.movie_banner}
                 />
               </a>
               <dl>
-                {/* <div key={key} image={film.image} style={imageCard}></div> */}
                 <dt>Release Date</dt>
                 <dd>{film.release_date}</dd>
                 <dt>Director</dt>
                 <dd>{film.director}</dd>
               </dl>
               <Link to={`/FilmDetails/${film.id}`}>
-                <Button>More Details</Button>
+                <Button class='btn btn-outline-dark'>More Details</Button>
               </Link>
-              {/* <Button
-                className='myButton'
-                to={`/FilmDetails/${film.id}`}
-                key={key}>More Details
-              </Button> */}
             </Card>
           </div>
         </Row>

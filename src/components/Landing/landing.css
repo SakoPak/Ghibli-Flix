@@ -1,0 +1,17 @@
+.btn {
+    background: hsla(2, 84%, 78%, 1);
+    
+        background: linear-gradient(45deg, hsla(2, 84%, 78%, 1) 17%, hsla(350, 91%, 65%, 1) 100%);
+    
+        background: -moz-linear-gradient(45deg, hsla(2, 84%, 78%, 1) 17%, hsla(350, 91%, 65%, 1) 100%);
+    
+        background: -webkit-linear-gradient(45deg, hsla(2, 84%, 78%, 1) 17%, hsla(350, 91%, 65%, 1) 100%);
+    
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#f69a97", endColorstr="#f75672", GradientType=1);
+
+}
+
+#signinbtn {
+    color: black;
+}
+

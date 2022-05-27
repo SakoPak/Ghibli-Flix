@@ -13,19 +13,28 @@ import ChangePassword from './components/auth/ChangePassword'
 import LandingPage from './components/Landing/LandingPage'
 import FilmIndex from './components/FilmIndex/FilmIndex'
 import FilmDetails from './components/Films/FilmDetails'
-import Main from './components/Home/Main'
+import Profile from './components/Home/Profile'
+import ShowProfile from './components/Profile/ShowProfile'
+import UpdateProfile from './components/Profile/UpdateProfile'
+import CreateProfile from './components/Profile/CreateProfile'
+import IndexProfiles from './components/Profile/IndexProfiles'
+import Dashboard from './components/Profile/Dashboard'
 
 class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
       user: null,
-      msgAlerts: []
+      msgAlerts: [],
+      profileId: '',
+      profileData: null
     }
   }
 
   setUser = (user) => this.setState({ user })
-
+  setProfile = (profileId) => this.setState({ profileId }) // profileId: profileId
+  setProfileData = (profileData) => this.setState({ profileData })
+  clearProfile = () => this.setState({ profileData: null })
   clearUser = () => this.setState({ user: null })
 
   deleteAlert = (id) => {
@@ -60,14 +69,23 @@ class App extends Component {
         ))}
         <main className='container'>
           <Route exact path='/' render={() => <LandingPage />} />
-          <Route path='/Main' render={() => <Main />} />
+          <Route exact path='/Ghibli-Flix' render={() => <LandingPage />} />
+          <Route
+            exact
+            path='/profile-dashboard'
+            render={() => (
+              <Dashboard msgAlert={this.msgAlert} user={this.state.user} />
+            )}
+          />
+
           <Route
             path='/FilmDetails/:id'
             render={() => (
               <FilmDetails msgAlert={this.msgAlert} user={this.state.user} />
             )}
           />
-          <Route
+          <AuthenticatedRoute
+            user={user}
             exact
             path='/films'
             render={() => (
@@ -103,6 +121,52 @@ class App extends Component {
             path='/change-password'
             render={() => (
               <ChangePassword msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/profile'
+            render={() => (
+              <Profile msgAlert={this.msgAlert} user={this.state.user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/create-profile'
+            render={() => (
+              <CreateProfile
+                msgAlert={this.msgAlert}
+                user={user}
+                setProfile={this.setProfile}
+                setProfileData={this.setProfileData}
+              />
+            )}
+          />
+          {/* <Route
+            user={user}
+            path='/show-profile'
+            render={() => <ShowProfile msgAlert={this.msgAlert} user={this.state.user} />}
+          /> */}
+
+          <AuthenticatedRoute
+            exact
+            user={user}
+            path='/profile/:id'
+            render={() => <ShowProfile msgAlert={this.msgAlert} user={user} />}
+          />
+
+          <AuthenticatedRoute
+            user={user}
+            path='/profile/:id/edit'
+            render={() => (
+              <UpdateProfile msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/profiles'
+            render={() => (
+              <IndexProfiles msgAlert={this.msgAlert} user={user} />
             )}
           />
         </main>
