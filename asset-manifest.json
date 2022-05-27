@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Ghibli-Flix/static/css/main.0ff28f95.chunk.css",
-    "main.js": "/Ghibli-Flix/static/js/main.098a8817.chunk.js",
-    "main.js.map": "/Ghibli-Flix/static/js/main.098a8817.chunk.js.map",
+    "main.js": "/Ghibli-Flix/static/js/main.67a8fbe5.chunk.js",
+    "main.js.map": "/Ghibli-Flix/static/js/main.67a8fbe5.chunk.js.map",
     "runtime-main.js": "/Ghibli-Flix/static/js/runtime-main.535119d7.js",
     "runtime-main.js.map": "/Ghibli-Flix/static/js/runtime-main.535119d7.js.map",
     "static/js/2.46d8a488.chunk.js": "/Ghibli-Flix/static/js/2.46d8a488.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.535119d7.js",
     "static/js/2.46d8a488.chunk.js",
     "static/css/main.0ff28f95.chunk.css",
-    "static/js/main.098a8817.chunk.js"
+    "static/js/main.67a8fbe5.chunk.js"
   ]
 }
