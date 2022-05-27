@@ -30,7 +30,7 @@ function IndexProfiles (props) {
       })
   }, [])
 
-  if (profiles) {
+  if (profiles != null) {
     return (
       <div style={{ width: '85%', margin: '1rem auto' }}>
 
