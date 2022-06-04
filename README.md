@@ -83,7 +83,7 @@ To begin, navigate on the project directory, after you have downloaded or cloned
 - User can further personalize their dashboard.
 
 ## Image Credit
-- Studio Ghibli
+- [Studio Ghibli](https://www.ghibli.jp/)
 - <a target="_blank" href="https://icons8.com/icon/13wc47z7qRRJ/totoro">Totoro</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
   
 ## About Me
