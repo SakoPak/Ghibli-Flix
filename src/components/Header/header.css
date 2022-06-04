@@ -3,8 +3,32 @@
 .container .navbar-dark .navbar-text {
     color: black;
 }
-element.style {}
+
 
 .navbar-dark .navbar-nav .nav-link{
     color: black;
+}
+
+
+.navbar-nav {
+    padding: 10px;
+    color: black;
+
+}
+.navbar-nav .signout {
+    margin-right: auto;
+}
+
+.nav-link.active {
+    color: black;
+}
+
+.navbar-brand {
+    color: black;
+
+}
+
+.navbar {
+    background: none;
+
 }

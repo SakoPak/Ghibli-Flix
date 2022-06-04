@@ -9,3 +9,10 @@
     
         filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#83F5E5", endColorstr="#E761BD", GradientType=1);
 }
+
+.card {
+    margin: right;
+    align-items: center;
+
+
+}

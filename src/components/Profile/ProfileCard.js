@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { Button, Card } from 'react-bootstrap'
+import './profileCard.css'
 
 class ProfileCard extends Component {
   constructor (props) {
@@ -18,10 +19,9 @@ class ProfileCard extends Component {
     const { username, first, last, match, color } = this.props.profile
 
     return (
-
       <div className='container col-sm-10 col-md-8'>
         <>
-          <Card className='card' border='light' style={{ width: '30rem' }}>
+          <Card className='card' border='light' style={{ width: '100px' }}>
             <Card.Header className='cardHeader'>
               {username}&apos;s Profile
             </Card.Header>
@@ -37,20 +37,20 @@ class ProfileCard extends Component {
               <>
                 <Button
                   className='formButton btn1'
-                  variant='outline-dark'
+                  variant='outline-light'
                   onClick={this.handleDelete}>
-                                Delete
+                Delete
                 </Button>
+
                 <Button
                   className='formButton btn1'
-                  variant='outline-dark'
+                  variant='outline-light'
                   onClick={() =>
                     this.props.history.push(`/profile/${match.params.id}/edit`)
                   }>
-                                Update
+                Update
                 </Button>
               </>
-
             </Card.Body>
           </Card>
         </>
@@ -60,22 +60,3 @@ class ProfileCard extends Component {
 }
 
 export default withRouter(ProfileCard)
-
-// {
-// user._id === owner && (
-// <>
-//     <Button
-//     className='formButton btn1'
-//     variant='outline-dark'
-//     onClick={this.handleDelete}>
-//                 Delete
-//     </Button>
-//     <Button
-//     className='formButton btn1'
-//     variant='outline-dark'
-//     onClick={() => history.push(`/profile/${match.params.id}/edit`)}>
-//                 Update
-//     </Button>
-// </>
-// )
-// }

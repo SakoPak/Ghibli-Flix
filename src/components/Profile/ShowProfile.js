@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button'
 import { withRouter } from 'react-router-dom'
 import { showProfile, deleteProfile } from '../../api/profile'
 import Card from 'react-bootstrap/Card'
+import './profileCard.css'
 
 class ShowProfile extends Component {
   constructor (props) {
@@ -18,7 +19,6 @@ class ShowProfile extends Component {
 
     showProfile(match.params.id, user)
       .then((res) => {
-        console.log(res)
         this.setState({ profile: res.data.profile })
       })
       .then(() => {
@@ -63,45 +63,49 @@ render () {
     return 'Loading...'
   }
 
-  const { username, first, last, owner } = this.state.data
+  const { username, first, last, owner, color } = this.state.profile
   const { user, history, match } = this.props
 
   return (
-    <div className='container col-sm-10 col-md-8'>
-      <>
-        <Card className='card' border='light' style={{ width: '30rem' }}>
-          <Card.Header className='cardHeader'>
-            {username}&apos;s Profile
-          </Card.Header>
-          <Card.Body className='cardColor'>
-            <Card.Title className='cardColor'>
-              <p>Hello {username}!</p>
-            </Card.Title>
-            <Card.Text>
-              <p>First Name: {first}</p>
-              <p>Last Name: {last}</p>
-            </Card.Text>
-            {user._id === owner && (
-              <>
-                <Button
-                  className='formButton btn1'
-                  variant='outline-dark'
-                  onClick={this.handleDelete}>
-                                    Delete
-                </Button>
-                <Button
-                  className='formButton btn1'
-                  variant='outline-dark'
-                  onClick={() =>
-                    history.push(`/profile/${match.params.id}/edit`)
-                  }>
-                                    Update
-                </Button>
-              </>
-            )}
-          </Card.Body>
-        </Card>
-      </>
+    <div className='row align-items-md-stretch'>
+      <div className='class col-md-6 '>
+        <div h-100 p-5 bg-light border rounded-3 center padding-10>
+          <>
+            <Card className='card text-center w-100' border='dark'>
+              <Card.Header className='cardHeader'>
+                {username}&apos;s Profile
+              </Card.Header>
+              <Card.Body className='cardColor'>
+                <Card.Title className='cardColor'>
+                  <p>Hello {username}!</p>
+                </Card.Title>
+                <Card.Text>
+                  <p>First Name: {first}</p>
+                  <p>Last Name: {last}</p>
+                  <p>Totoro Color: {color}</p>
+
+                </Card.Text>
+                {user._id === owner && (
+                  <>
+                    <Button
+                      className='formButton btn1'
+                      variant='outline-dark'
+                      onClick={this.handleDelete}>Delete
+                    </Button>
+                    <Button
+                      className='formButton btn1'
+                      variant='outline-dark'
+                      onClick={() =>
+                        history.push(`/profile/${match.params.id}/edit`)
+                      }>Update
+                    </Button>
+                  </>
+                )}
+              </Card.Body>
+            </Card>
+          </>
+        </div>
+      </div>
     </div>
   )
 }

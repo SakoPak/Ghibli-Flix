@@ -42,3 +42,32 @@
         font-size: 3.5rem;
     }
 }
+
+.app-container {
+    height: 100vh;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover; 
+    
+   
+}
+
+
+.app-container .h1 .p {
+    font-weight: bold;
+    color: #000000;
+
+}
+
+.col-lg-7 {
+    background: rgba(224, 224, 224, 0.7);
+    border-radius: 0.3rem;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.signinbox {
+    margin-top: 40px;
+}

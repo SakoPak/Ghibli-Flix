@@ -75,7 +75,6 @@ export const deleteFilm = (id, user) => {
   })
 }
 export const indexFilms = (user) => {
-  console.log(user)
   return axios({
     url: API_URL + '/films/',
     method: 'GET',

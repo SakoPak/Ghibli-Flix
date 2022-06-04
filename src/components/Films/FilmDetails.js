@@ -39,7 +39,7 @@ function FilmDetails (props) {
                 </p>
               </div>
               <div className='card-text'>
-                <p className='display-inline'>Romanised Title: {currentFilm.romanised_title}
+                <p className='display-inline'>Romanised Title: {currentFilm.original_title_romanised}
                 </p>
               </div>
               <div className='card-text'>

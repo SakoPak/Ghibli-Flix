@@ -11,8 +11,7 @@ function IndexProfiles (props) {
       .then((res) => res.data)
       .then((res) => {
         // passing all profiles + response as args to 'setProfiles' function
-        console.log(res)
-        setProfiles(res)
+        setProfiles(res.profiles)
       })
       .then(() => {
         msgAlert({
@@ -30,22 +29,18 @@ function IndexProfiles (props) {
       })
   }, [])
 
-  if (profiles != null) {
-    return (
-      <div style={{ width: '85%', margin: '1rem auto' }}>
+  return (
+    <div style={{ width: '85%', margin: '1rem auto' }}>
 
-        <h1> Profiles </h1>
-        <hr />
-        {profiles && profiles.length > 0
-          ? profiles.map((profile) => {
-            return <ProfileCard key={profile.id} profile={profile} />
-          })
-          : 'loading...'}
-      </div>
-    )
-  } else {
-    return <p>loading</p>
-  }
+      <h1> Profiles </h1>
+      <hr />
+      {profiles && profiles.length > 0
+        ? profiles.map((profile) => {
+          return <ProfileCard key={profile.id} profile={profile} />
+        })
+        : 'loading...'}
+    </div>
+  )
 }
 
 export default IndexProfiles

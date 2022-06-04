@@ -4,10 +4,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './filmCard.css'
 
-// each film card will have an image, a few details and a 'more details' button
-
 const FilmCard = (props) => {
-  console.log(props)
   const { key, film } = props
 
   // 'key' is 'id' value
@@ -15,30 +12,31 @@ const FilmCard = (props) => {
     <>
       <Container fluid>
         <Row class='row row-cols-1 row-cols-md-3 g-4'>
-          <div className='col'>
+          <div className='col shadow bg-body rounded'>
             <Card key={key}>
-              <h2>{film.title}</h2>
               <a href={`/films/${film.id}`}>
                 <img
-                  style={{ width: '65%', height: 'auto' }}
-                  src={film.movie_banner}
+                  style={{ width: '100%', height: '100' }}
+                  src={film.image}
                 />
               </a>
               <dl>
+                <h4 className='title'>{film.title}</h4>
                 <dt>Release Date</dt>
                 <dd>{film.release_date}</dd>
                 <dt>Director</dt>
                 <dd>{film.director}</dd>
               </dl>
-              <Link to={`/FilmDetails/${film.id}`}>
-                <Button class='btn btn-outline-dark'>More Details</Button>
-              </Link>
+              <div className='footer'>
+                <Link to={`/FilmDetails/${film.id}`}>
+                  <Button class='btn-sm btn-outline-light'>More Details</Button>
+                </Link>
+              </div>
             </Card>
           </div>
         </Row>
       </Container>
     </>
-  // also want to insert 'heart' icon to mark as a favorite
   )
 }
 

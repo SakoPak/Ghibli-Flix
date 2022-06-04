@@ -3,6 +3,7 @@ import { showProfile, updateProfile } from '../../api/profile'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Redirect, withRouter } from 'react-router-dom'
+import './updateProfile.css'
 
 class UpdateProfile extends Component {
   constructor (props) {
@@ -60,7 +61,7 @@ render () {
     return <Redirect to={'/chat/' + this.props.match.params.id} />
   }
   return (
-    <div>
+    <div className='formStyle'>
       <Form
         className='container col-sm-10 col-md-8 mx-auto mt-5'
         onSubmit={this.handleSubmit}>

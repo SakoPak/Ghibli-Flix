@@ -18,7 +18,6 @@ import ShowProfile from './components/Profile/ShowProfile'
 import UpdateProfile from './components/Profile/UpdateProfile'
 import CreateProfile from './components/Profile/CreateProfile'
 import IndexProfiles from './components/Profile/IndexProfiles'
-import Dashboard from './components/Profile/Dashboard'
 
 class App extends Component {
   constructor (props) {
@@ -56,6 +55,7 @@ class App extends Component {
     const { msgAlerts, user } = this.state
     return (
       <Fragment>
+
         <Header user={user} />
         {msgAlerts.map((msgAlert) => (
           <AutoDismissAlert
@@ -67,16 +67,10 @@ class App extends Component {
             deleteAlert={this.deleteAlert}
           />
         ))}
-        <main className='container'>
+        <main>
+
           <Route exact path='/' render={() => <LandingPage />} />
           <Route exact path='/Ghibli-Flix' render={() => <LandingPage />} />
-          <Route
-            exact
-            path='/profile-dashboard'
-            render={() => (
-              <Dashboard msgAlert={this.msgAlert} user={this.state.user} />
-            )}
-          />
 
           <Route
             path='/FilmDetails/:id'
@@ -127,7 +121,12 @@ class App extends Component {
             user={user}
             path='/profile'
             render={() => (
-              <Profile msgAlert={this.msgAlert} user={this.state.user} />
+              <Profile
+                msgAlert={this.msgAlert}
+                user={this.state.user}
+                profileId={this.state.profileId}
+                profileData={this.profileData}
+              />
             )}
           />
           <AuthenticatedRoute
@@ -142,11 +141,6 @@ class App extends Component {
               />
             )}
           />
-          {/* <Route
-            user={user}
-            path='/show-profile'
-            render={() => <ShowProfile msgAlert={this.msgAlert} user={this.state.user} />}
-          /> */}
 
           <AuthenticatedRoute
             exact
@@ -169,7 +163,9 @@ class App extends Component {
               <IndexProfiles msgAlert={this.msgAlert} user={user} />
             )}
           />
+
         </main>
+
       </Fragment>
     )
   }

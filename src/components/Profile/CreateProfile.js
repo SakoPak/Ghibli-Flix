@@ -3,6 +3,10 @@ import Form from 'react-bootstrap/Form'
 import { createProfile } from '../../api/profile'
 import { withRouter } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
+import grey from '../../Assets/Totoro Icons/grey.png'
+import blue from '../../Assets/Totoro Icons/blue.png'
+import yellow from '../../Assets/Totoro Icons/yellow.png'
+import purple from '../../Assets/Totoro Icons/purple.png'
 
 class CreateProfile extends Component {
   constructor (props) {
@@ -29,9 +33,8 @@ setName (event) {
 
 handleSubmit = (event) => {
   event.preventDefault()
-  console.log(this.props)
   const { user, msgAlert, history, setProfile, setProfileData } = this.props
-  let responseData
+
   createProfile(this.state, user)
     .then((res) => {
       msgAlert({
@@ -44,11 +47,11 @@ handleSubmit = (event) => {
     .then((res) => {
       setProfile(res.data.profile._id)
       setProfileData(res.data.profile)
-      return (responseData = res.data.profile._id)
+      return res.data.profile._id
     })
-    .then(() => { console.log(responseData) })
-    .then(() => {
-      history.push('/profile')
+
+    .then((id) => {
+      history.push(`/profile/${id}`)
     })
     .catch((error) => {
       msgAlert({
@@ -70,7 +73,6 @@ render () {
         <div className='modal-dialog' role='document'>
           <div className='modal-content rounded-5 shadow'>
             <div className='modal-header p-5 pb-4 border-bottom-0'>
-              {/* <h5 className='modal-title'>Hello{this.props.username}</h5> */}
               <button
                 type='button'
                 className='btn-close'
@@ -82,7 +84,10 @@ render () {
               <Form onSubmit={this.handleSubmit}>
                 <div className='form-floating mb-3'>
                   <h3>Create Profile</h3>
-                  {/* <span className='material-icons'>account_circle</span> */}
+                  <img src={grey} alt='mini Totoro' />
+                  <img src={purple} alt='mini Totoro' />
+                  <img src={blue} alt='mini Totoro' />
+                  <img src={yellow} alt='mini Totoro' />
                 </div>
                 <Form.Group controlId='username'>
                   <Form.Label for='floatingInput'>Username</Form.Label>
@@ -124,9 +129,10 @@ render () {
                   </Form.Group>
                 </div>
 
-                <div className='form-floating mb-3'>
+                <div className='form-floating mb-3 '>
                   <Form.Group>
-                    <Form.Label for='floatingSelect'>What Color Totoro Would You Be?
+                    <Form.Label for='floatingSelect'>
+                      <strong>What Color Totoro Would You Be?</strong>
                     </Form.Label>
                     <p>Pick a Fave: Grey, Blue, Yellow, Purple, Pink!</p>
                     <Form.Control
@@ -138,9 +144,11 @@ render () {
                     />
                   </Form.Group>
                 </div>
-                <Button className='btn2 btn-lg'
+                <Button
+                  className='btn2 btn-lg'
                   variant='outline-secondary'
-                  type='submit'>Save Profile
+                  type='submit'>
+                Save Profile
                 </Button>
               </Form>
             </div>
@@ -153,45 +161,3 @@ render () {
 }
 
 export default withRouter(CreateProfile)
-
-// example
-// {/* <a href="#" class="nav-link text-white">
-//           <svg class="bi me-2" width="16" height="16">< "#people-circle"/></svg>
-//           Customers
-//         </a> */}
-
-// <Link to={'/profile'} className='nav-link'>
-//   <Button
-//     className='btn2 btn-lg'
-//     variant='outline-secondary'
-//     type='submit'>Save Profile
-//   </Button>
-// </Link>
-
-// eslint-disable-next-line no-lone-blocks
-
-/* <      <label htmlFor='DataList' className='form-label'>Pick a Color
-                  </label>
-                <input class="form-control" list="datalistOptions" id="colorList" placeholder="Type for choices...">
-                <datalist id="datalistOptions">
-                  <option value='grey'>
-                  <option value='blue'>
-                  <option value='yellow'>
-                  <option value='purple'>
-                  <option value='pink'>
-                  </datalist> */
-
-//   { /* <Link to={'/profile'} className='nav-link' msgAlert={this.props.msgAlert} user={this.props.user}> */ }
-
-//   {
-//     /* </Link> */
-//   }
-
-//   {
-//     /* <Button
-//                   className='btn2 btn-lg'
-//                   variant='outline-secondary'
-//                   type='submit'>Save Profile
-//                 </Button> */
-//   }
-// }

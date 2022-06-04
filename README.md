@@ -5,11 +5,11 @@
 Ghibli Flix is a place to find all your favorite Ghibli movies! You can look up any Ghibli movie, read a summary and create a favorite watchlist for future viewing.
 
 ## Logging in Online
- To log in and get started, click <a href="https://afternoon-earth-27940.herokuapp.com" target="_blank">here!</a>
+ To log in and get started, click <a href="https://sakopak.github.io/Ghibli-Flix/" target="_blank">here!</a>
 
 ## Installation
 
-Before you can run the app with `npm start` install the depedencies: Node.js and npm on your computer. 
+Before you can run the app with `npm start` install the dependencies: Node.js and npm on your computer. 
 
 [Documentation on downloading and installing Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)).
 To begin, navigate on the project directory, after you have downloaded or cloned this repository and run:
