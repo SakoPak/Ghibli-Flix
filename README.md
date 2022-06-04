@@ -30,7 +30,11 @@ To begin, navigate on the project directory, after you have downloaded or cloned
 - To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## A Preview of Ghibli Flix
-![GhibliScreenShot](https://user-images.githubusercontent.com/82487617/170667840-f76bc06e-51ab-44b1-9441-02d1851ea4cc.png)
+![GhibliScreenShot1](https://user-images.githubusercontent.com/82487617/171982525-233f2371-1478-4f24-bc54-2f6b76e4d664.png)
+
+![GhibliScreenShot2](https://user-images.githubusercontent.com/82487617/171982562-d1b0abf7-f700-4abe-bc04-df907bb1aa50.png)
+
+![GhibliScreenShot3](https://user-images.githubusercontent.com/82487617/171982588-53f57974-e977-4ef7-9301-3aa80110ccfa.png)
 
 ## User Stories    
 
