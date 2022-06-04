@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Ghibli Flix is a place to find all your favorite Ghibli movies! You can look up any Ghibli movie, read a summary and create a favorite watchlist for future viewing.
+Ghibli Flix is a place to find all your favorite Ghibli films! You can look up any Ghibli movie, read a summary and learn more about your favorite Ghibli films.
 
 ## Logging in Online
  To log in and get started, click <a href="https://sakopak.github.io/Ghibli-Flix/" target="_blank">here!</a>
@@ -20,7 +20,7 @@ To begin, navigate on the project directory, after you have downloaded or cloned
 
 ##### `npm start`
 
-- Runs the app in the development mode.\
+- Runs the app in the development mode.
 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 #### Learn More
@@ -82,10 +82,14 @@ To begin, navigate on the project directory, after you have downloaded or cloned
 - User will be able to edit, delete and update their watchlist.
 - User can further personalize their dashboard.
 
+## Image Credit
+- Studio Ghibli
+- <a target="_blank" href="https://icons8.com/icon/13wc47z7qRRJ/totoro">Totoro</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+  
 ## About Me
 
 Hi, I'm Sako Pak, a former photographer turned software engineer.
-I love the intersection of where art and tech collide and am currently studying full time at General Assembly's Software Engineering Immersive, learning how to build beautiful experiences and powerful programs through the magic of a machine.
+I love the intersection of where art and tech collide and am a recent graduate of General Assembly's Software Engineering Immersive, learning how to build beautiful experiences and powerful programs through the magic of a machine.
 
 Thank you for looking at my work!  
 
