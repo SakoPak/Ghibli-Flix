@@ -2,17 +2,17 @@
 
 ## Introduction
 
-Ghibli Flix is a place to find all your favorite Ghibli films! You can look up any Ghibli movie, read a summary and learn more about your favorite Ghibli films.
+Ghibli Flix is a place to find all your favorite Ghibli films! You can browse the Ghibli film library, read a summary and learn more about your favorite Ghibli films.
 
 ## Logging in Online
  To log in and get started, click <a href="https://sakopak.github.io/Ghibli-Flix/" target="_blank">here!</a>
 
 ## Installation
 
-Before you can run the app with `npm start` install the dependencies: Node.js and npm on your computer. 
+Before you can run the app with `npm start`, install the dependencies: Node.js and npm on your computer. 
 
-[Documentation on downloading and installing Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)).
-To begin, navigate on the project directory, after you have downloaded or cloned this repository and run:
+[Documentation on downloading and installing Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+To begin, navigate on the project directory (after you have downloaded or cloned this repository) and run:
 
 ##### `npm install`
 
